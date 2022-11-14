@@ -97,7 +97,7 @@ for genre in (all_genres.keys()):
                             pass
 
                     time.sleep(0.4)
-                except PIL.UnidentifiedImageError:
+                except:
                     pass
 
 print(show_cur_time('Finish'))
