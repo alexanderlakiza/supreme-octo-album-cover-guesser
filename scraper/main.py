@@ -1,15 +1,14 @@
 import json
-import numpy as np
 import os
-import PIL
 import random
-import requests
 import time
 import urllib.request
 from datetime import datetime
-from PIL import Image
 
 import deezer
+import numpy as np
+import requests
+from PIL import Image
 
 client = deezer.Client(headers={'Accept-Language': 'en'})
 
@@ -28,10 +27,14 @@ BASE_DIR = '../data/'
 
 n_image = len(os.listdir(f"{BASE_DIR}images"))
 current_genre_artists = []
-target_dict = {}
 
-with open(f'{BASE_DIR}targets.json', 'w') as json_file:
-    json.dump(target_dict, json_file)
+if 'targets.json' in os.listdir(f"{BASE_DIR}"):
+    with open(f'{BASE_DIR}targets.json', 'r') as json_file:
+        target_dict = json.load(json_file)
+else:
+    target_dict = {}
+    with open(f'{BASE_DIR}targets.json', 'w') as json_file:
+        json.dump(target_dict, json_file)
 
 
 def show_cur_time(endpoint):
