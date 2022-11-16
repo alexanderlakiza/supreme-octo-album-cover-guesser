@@ -21,7 +21,7 @@ all_genres = {
     'Alternative': 4,
     'Rock': 5,
     'Metal': 6,
-    'Electronic': 7
+    'Electro': 7
 }
 
 BASE_DIR = '../data/'
